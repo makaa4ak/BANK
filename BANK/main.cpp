@@ -8,10 +8,10 @@ using namespace std;
 	
 int main()
 {
-	bank s1("123456","1000",10000);
+	bank s1("123456","100000",100000);
 	//s1.Input();
 	s1.Print();
-	s1.Take(1000);
+	s1.Take();
 	s1.Print();
 
 

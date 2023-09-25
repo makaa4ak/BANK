@@ -81,8 +81,68 @@ void bank::Input()
 
 }
 
-void bank::Take(int minus_money)
+void bank::Take()
 {
+	int minus_money = 0;
+	cout << "------------take money--------------\n";
+	int nm_money = stoi(money);
+
+	while (true)
+	{
+		cout << "Take of money: ";
+		cin >> minus_money;
+		if (raplate(minus_money))
+			break;
+	}
+	if (nm_money >= minus_money && MAX_Bank >= minus_money && nomenal()>= minus_money)
+	{
+		while (true)
+		{
+			if (minus_money >= 1000 && MON_1000 != 0)
+			{
+				MON_1000 -= 1;
+				minus_money -= 1000;
+				MAX_Bank -= 1000;
+				nm_money -= 1000;
+				money = to_string(nm_money);
+			}
+			else if (minus_money >= 500 && MON_500 != 0)
+			{
+				MON_500 -= 1;
+				minus_money -= 500;
+				MAX_Bank -= 500;
+				nm_money -= 500;
+				money = to_string(nm_money);
+			}
+			else if (minus_money >= 200 && MON_200 != 0)
+			{
+				MON_200 -= 1;
+				minus_money -= 200;
+				MAX_Bank -= 200;
+				nm_money -= 200;
+				money = to_string(nm_money);
+			}
+			else if (minus_money >= 100 && MON_100 != 0)
+			{
+				MON_100 -= 1;
+				minus_money -= 100;
+				MAX_Bank -= 100;
+				nm_money -= 100;
+				money = to_string(nm_money);
+			}
+			else
+			{
+				cout << "FINAL!!!!!\n";
+				break;
+			}
+		}
+	}
+	else
+		cout << "Not Money!!!!!" << endl;
+
+
+}
+/*
 	cout << "------------take money--------------\n";
 	int nm_money= stoi(money);
 	cout << nm_money << " - " << minus_money << endl;
@@ -96,5 +156,4 @@ void bank::Take(int minus_money)
 	else
 		cout << "Error - money not!!!!" << endl;
 
-
-}
+		*/

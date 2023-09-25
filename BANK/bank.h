@@ -20,6 +20,16 @@ private:
 	int MON_1000 = 4;
 	
 	
+	int nomenal()
+	{
+		int SUM=0;
+
+		SUM += MON_1000 * 1000;
+		SUM += MON_500 * 500;
+		SUM += MON_200 * 200;
+		SUM += MON_100 * 100;
+		return SUM;
+	}
 
 	bool raplate(int mon)
 	{
@@ -52,7 +62,7 @@ public:
 	void Print();
 	void Input();
 
-	void Take(int);
+	void Take();
 
 
 	
