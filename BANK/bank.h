@@ -7,17 +7,21 @@ class bank
 {
 private:
 
-	//const char* c_index;
-	//const char* c_money;
+	
 	string index;
 	string money;
 	int MAX_Bank;
-	//int MIN_Bank;
 
-	//void pere(const char*, const char*)
+	int index_size = 6;
+
+	int MON_100 = 4;
+	int MON_200 = 4;
+	int MON_500 = 4;
+	int MON_1000 = 4;
+	
 	
 
-	int raplate(int mon)
+	bool raplate(int mon)
 	{
 		int max_mon=stoi(money);
 		int ost_mon=0;
@@ -26,18 +30,15 @@ private:
 		{
 			if (mon % 100 == 0)
 			{
-				max_mon -= mon;
-				money = max_mon;
-				t = false;
+				return true;
 			}
 			else
 			{
-				cout << "Error" << endl;
-				ost_mon = mon % 100;
-				mon -= ost_mon;
+				return false;
 			}
 		}
 	}
+	
 	
 public:
 	bank(string, string, int);
@@ -46,9 +47,12 @@ public:
 	bank();
 	~bank();
 
+	int prover_ind();
+
 	void Print();
 	void Input();
 
+	void Take(int);
 
 
 	
